@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" id="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;"
+/>
+
+<link rel="stylesheet" href="js/jquery.mobile/jquery.mobile-1.2.0.css" />
+<script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery.mobile/jquery.mobile-1.2.0.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery.jsonp-2.4.0.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/cordova-2.1.0.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery.form.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/myJavascripts.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/coach-buddy.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/scratch-pad.js" charset="utf-8"></script>
+
+<link type="text/css" rel="stylesheet" href="css/coach-buddy.css">
+<title>Coach Buddy</title>
+</head>
+
+
+<body onload="onBodyLoad()">
+    <section id="main" data-role="page">        
+            <header data-role="header" data-position="fixed">
+                <a onclick="CoachBuddy.Page.showTeamDetails();" data-icon="grid">Team Details</a>                
+                <h1>Coach Buddy</h1>
+                <a onclick="CoachBuddy.Page.showConfig();" data-icon="gear">Config</a>
+            </header>
+            <div data-role="content">
+                <div class="right-pane">
+                    <div id="player-list"></div>
+                        <input onclick="CoachBuddy.Page.showAddPlayer();" data-icon="plus" data-mini="true" type="submit" id="player-new" value="Add New Player"/>
+                    
+                </div>
+                <div class="main-content">
+                    <canvas id="soccer-field" height="768" width="1024">
+                        <!--  fallback -->
+                        Canvas not supported
+                    </canvas>
+                </div>
+            </div>       
+    </section>
+    <section id="team-details" data-role="page" data-add-back-btn="true">
+        <header data-role="header"><h1>Team Details</h1></header>
+    </section>
+    <section id="view-player" data-role="page" data-add-back-btn="true"></section>
+    <section id="add-player" data-role="page" data-add-back-btn="true">
+        <header data-role="header"><h1>Add New Player</h1></header>
+        <div data-role="content">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" value="" />
+            <br />
+            
+            <label for="age">Age: </label>
+            <input type="number" name="age" id="age" value="" />
+            <br />
+            
+            <label for="favoritePosition">Favorite Position: </label>
+            <input type="text" name="favoritePosition" id="favoritePosition" value="" />
+            <br />
+            
+            <label for="jerseyNumber">Jersey Number: </label>
+            <input type="number" name="jerseyNumber" id="jerseyNumber" value="" />
+            <br />
+            
+            <label for="contactNumber">Contact #: </label>
+            <input type="tel" name="contactNumber" id="contactNumber" value="" />
+            <br />
+            
+            
+            <input type="button" value="Save" onclick="CoachBuddy.Player.add();">
+            
+        </div>
+    </section>
+    <section id="edit-player" data-role="page" data-add-back-btn="true"></section>
+    <section id="config" data-role="page" data-add-back-btn="true"></section>
+</body>
+</html>
