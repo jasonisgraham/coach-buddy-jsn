@@ -1,0 +1,8 @@
+bin/*
+.~/*
+.classpath
+.externalToolBuilders/*
+.git/*
+.project
+.settings/*
+gen/*
