@@ -290,6 +290,18 @@ CoachBuddy.Database = {
 	}
 };
 
+CoachBuddy.Camera = {
+	takePhoto: function() {
+		navigator.camera.getPicture(onCameraSuccess, onCameraError);
+	},
+	onCameraSuccess: function(imageURL) {
+		navigator.notification.alert("onCameraSuccess: " + imageURL);
+	},
+	onCameraError: function(e) {
+		navigator.notification.alert("onCameraError: " + e);
+	}
+};
+
 $(document).ready(function() {
 	CoachBuddy.init();
 });
